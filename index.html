@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hojaestilos.css">
+
+    <title>Document</title>
+</head>
+
+<body onload="createGrid()">
+    <div class="header">
+        <h1 class="header-title">2048</h1>
+    </div>
+    <div class="container">
+        <p class="title">SCORE:<span class="puntuacion">0</span></p>
+        <div class="grid-container">
+        </div>
+        <div class="gameOver">
+            <p>
+                GAME OVER<br>
+                SCORE:<span id="final">0</span><br>
+                <a href="" class="btn">TRY AGAIN!</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
