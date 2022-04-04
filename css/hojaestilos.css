@@ -8,6 +8,7 @@ body {
     padding: 10px;
     margin: 10px;
 }
+
 .header {
     padding: 10px;
     margin-bottom: 15px;
@@ -16,6 +17,23 @@ body {
 .header-title {
     font: bold 50px arial;
     color: #776e65;
+    text-align: center;
+}
+
+.score-container {
+    float: right;
+    display: flex;
+    position: relative;
+    display: block;
+    background: #bbada0;
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
     text-align: center;
 }
 
