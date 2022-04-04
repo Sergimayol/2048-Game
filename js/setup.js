@@ -7,3 +7,4 @@ function createGrid() {
         container[0].appendChild(row);
     }
 }
+
