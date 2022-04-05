@@ -55,11 +55,11 @@ var game = {
                 // Juzgar los datos en la matriz, si es 0, no se realiza ninguna operación y los datos originales y el nombre de la clase permanecen sin cambios
                 // Obtenga la identificación de la etiqueta dinámicamente: cuando se requiere el nombre de identificación, corresponde al subíndice de la matriz
                 if (this.data[r][c] == 0) {
-                    document.getElementById("cell-" + r + c).settextContent = "";
+                    document.getElementById("cell-" + r + c).innerHTML = "";
                     document.getElementById("cell-" + r + c).className = "cell";
                 } else {
                     // No es 0, luego muestra los datos en la matriz en la cuadrícula div correspondiente
-                    //document.getElementById("cell-" + r + c).innerHTML = this.data[r][c];
+                    document.getElementById("cell-" + r + c).innerHTML = this.data[r][c];
                     // Mantenga el nombre de clase original sin cambios y agregue el nombre de clase div correspondiente (dinámico)
                     document.getElementById("cell-" + r + c).className = "cell n" + this.data[r][c];
 
