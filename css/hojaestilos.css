@@ -10,6 +10,11 @@ body {
     background-color: #121212;
 }
 
+.theme-mode {
+    float: right;
+    cursor: pointer;
+}
+
 .header {
     padding: 10px;
     margin-bottom: 15px;
@@ -66,7 +71,7 @@ body {
     background-color: #bbada0;
 }
 
-.grid-cell {
+.cell {
     width: 100px;
     height: 100px;
     margin: 5px;

@@ -286,31 +286,28 @@ var game = {
         return true;
     }
 }
-function startGame() {
-    // Llama a la función para iniciar el juego
-    game.start();
-    document.onkeydown = function (event) {
-        // Presione el botón izquierdo o la tecla de letra a para moverse hacia la izquierda
-        if (event.keyCode == 37 || event.keyCode == 65) {
-            game.moveLeft();
-        }
-        // Presione la tecla arriba o la tecla de letra w para subir
-        if (event.keyCode == 38 || event.keyCode == 87) {
-            game.moveUp();
-        }
-        // Presione la tecla derecha o la tecla de letra d para moverse hacia la derecha
-        if (event.keyCode == 39 || event.keyCode == 68) {
-            game.moveRight();
-        }
-        // Presione la tecla hacia abajo o la tecla s para moverse hacia abajo
-        if (event.keyCode == 40 || event.keyCode == 83) {
-            game.moveDown();
-        }
-        // Presiona la barra espaciadora para reiniciar el juego
-        if (event.keyCode == 32) {
-            game.start();
-        }
-
+// Llama a la función para iniciar el juego
+game.start();
+document.onkeydown = function (event) {
+    // Presione el botón izquierdo o la tecla de letra a para moverse hacia la izquierda
+    if (event.keyCode == 37 || event.keyCode == 65) {
+        game.moveLeft();
     }
+    // Presione la tecla arriba o la tecla de letra w para subir
+    if (event.keyCode == 38 || event.keyCode == 87) {
+        game.moveUp();
+    }
+    // Presione la tecla derecha o la tecla de letra d para moverse hacia la derecha
+    if (event.keyCode == 39 || event.keyCode == 68) {
+        game.moveRight();
+    }
+    // Presione la tecla hacia abajo o la tecla s para moverse hacia abajo
+    if (event.keyCode == 40 || event.keyCode == 83) {
+        game.moveDown();
+    }
+    // Presiona la barra espaciadora para reiniciar el juego
+    if (event.keyCode == 32) {
+        game.start();
+    }
+
 }
-startGame();
