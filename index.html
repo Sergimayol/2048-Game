@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hojaestilos.css">
+    <title>2048</title>
+</head>
+
+<body class="body">
+    <div class="theme-mode" onclick="setTheme()">
+        <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAAXNSR0IArs4c6QAAAmdJREFUaEPtWOExhEEMfVcBKlACKqAEKkAFqAAVoAJUQAfogApQASpg3sxmJrPzfZvduVycz2bmfty3e0le3vuy2ZthojabKC50YAVmzwCcpvVzAPz+6+bBWAcWSWMNYwcAbpykaPlyw24BI6D9BOxwJOoOAH5oj+kztLXGVwgwVvdaRWJiY+CshASU7KOfkgosf+Z6LWPzJJQX6BYAny3ULGAMLtUeSmgVwDaAzZTlM4AnAJ9Z1iUfCwFYA4yB85eegC4KlSeQkwxgWONgwrXAdFXJzgMAgivZG4A9AGQx3FqBEcxrBupFdUJ2xw2FguC2BqS5cKCtwHR3+0pSvM+y3E3v5Up6HtIs8kq1ACNbH8oBZZaDkmWCu1N716JZy4Fx7vtWCbHD8dCl6WQpP+mEY7LiuyWy1EWgXNlJtXF4drUcmAbFQHpa18PuFYBjI5NLAEdpz5gfcdGinKoC/Btg+V1Kz35aipQZu13JSlKU2VJ+736Ha5HAn24eln51u+fYxGF2qN1zeJYDfOnbPUEzWR66ckbxGSUnnZMS093yPX3PZ0ergHOvt0hRgjFxsrRuRCcovpdLPVINDcFs57yEDhnlx+NAM7V0Q3Dp5ktpavmJLMeuLfNcVpvkaUnR4+breROvBlcC5nnz9ShQNShurGWs1LL17KdnyzyR0Fu0BYzJWS99yx+mlq8mVkqba4BZwVqAWb7c1juwQikny5ibfDwdeUjRMx83Xx2YWymDHHXGggrtFqYz5lbKIEedsaBCu4XpjLmVMshRZyyo0G5hOmNupQxy1BkLKrRbmM6YWymDHE2WsR+Qa4c3Lf7SawAAAABJRU5ErkJggg==" />
+    </div>
+    <div class="header">
+        <h1 class="header-title">2048</h1>
+        <!--<div class="score-container">0</div>-->
+    </div>
+    <div class="container">
+        <p class="title">SCORE:<span class="puntuacion" id="score">0</span></p>
+        <div class="grid-container">
+            <div class="cell" id="cell-00"></div>
+            <div class="cell" id="cell-01"></div>
+            <div class="cell" id="cell-02"></div>
+            <div class="cell" id="cell-03"></div>
+            <div class="cell" id="cell-10"></div>
+            <div class="cell" id="cell-11"></div>
+            <div class="cell" id="cell-12"></div>
+            <div class="cell" id="cell-13"></div>
+            <div class="cell" id="cell-20"></div>
+            <div class="cell" id="cell-21"></div>
+            <div class="cell" id="cell-22"></div>
+            <div class="cell" id="cell-23"></div>
+            <div class="cell" id="cell-30"></div>
+            <div class="cell" id="cell-31"></div>
+            <div class="cell" id="cell-32"></div>
+            <div class="cell" id="cell-33"></div>
+        </div>
+        <div class="gameOver" id="gameOver">
+            <p>
+                GAME OVER<br>
+                SCORE:<span id="final">0</span><br>
+                <a onclick="startGame()" class="btn">TRY AGAIN!</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="js/setup.js"></script>
+<script src="js/game.js"></script>
+
+</html>
