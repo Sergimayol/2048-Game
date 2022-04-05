@@ -48,7 +48,7 @@ class game {
             }
         }
     }
-    
+
     updateView() {
         for (var r = 0; r < this.data.length; r++) {
             for (var c = 0; c < this.data.length; c++) {
@@ -78,4 +78,9 @@ class game {
             gameOver.style.display = "none";
         }
     }
+}
+
+
+function startGame() {
+    partida = game.start();
 }
