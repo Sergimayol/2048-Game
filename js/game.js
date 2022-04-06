@@ -1,18 +1,16 @@
-// Crear objeto: atributo + método
-var game = {
-    // Matriz, guardar datos
-    data: [],
-    // Puntuación del juego: 0
-    score: 0,
-    // Establece el estado del juego: 1-inicio, 0-final
-    state: 1,
-    // Estado del juego: inicio
-    RUNNING: 1,
-    // Estado del juego: final
-    GAMEOVER: 0,
+
+class Game {
+
+    constructor() {
+        this.data = [];
+        this.score = 0;
+        this.state = 1;
+        this.RUNNING = 1;
+        this.GAMEOVER = 0;
+    }
 
     // El juego comienza con el método start ()
-    start: function () {
+    start() {
         // Establecer el estado del juego para comenzar
         this.state = this.RUNNING;
         // La puntuación inicial del juego es 0
@@ -34,10 +32,10 @@ var game = {
         this.randomNum();
         // Actualiza la página y muestra el valor div
         this.updateView();
-    },
+    }
 
     // genera aleatoriamente dos números 4 o 2
-    randomNum: function () {
+    randomNum() {
         while (true) {
             var r = Math.floor(Math.random() * this.data.length);
             var c = Math.floor(Math.random() * this.data.length);
@@ -47,9 +45,9 @@ var game = {
                 break;
             }
         }
-    },
+    }
 
-    updateView: function () {
+    updateView() {
         for (var r = 0; r < this.data.length; r++) {
             for (var c = 0; c < this.data.length; c++) {
                 // Juzgar los datos en la matriz, si es 0, no se realiza ninguna operación y los datos originales y el nombre de la clase permanecen sin cambios
@@ -77,10 +75,9 @@ var game = {
             // Si el estado es 1, significa que el juego aún no ha terminado y la pantalla final está oculta
             gameOver.style.display = "none";
         }
-    },
+    }
 
-    // Mueve todas las líneas a la izquierda
-    moveLeft: function () {
+    moveLeft() {
         // Determinar si la cuerda se mueve
         // Convierte la matriz en una cadena antes de hacer la operación de mover
         var before = String(this.data);
@@ -100,10 +97,10 @@ var game = {
             // Actualiza la página antes de que termine el juego y luego muestra el número generado aleatoriamente
             this.updateView();
         }
-    },
+    }
 
     // Juzga y mueve cada elemento en la línea especificada a la izquierda
-    moveLeftRow: function (r) {
+    moveLeftRow(r) {
         // 0 inicio, recorre cada elemento en la fila r
         for (var c = 0; c < this.data.length - 1; c++) {
             // Obtener el índice del siguiente elemento del elemento actual que no es 0 nextc
@@ -123,10 +120,9 @@ var game = {
                 this.data[r][nextc] = 0;
             }
         }
-    },
-
+    }
     // Encuentra el siguiente número a la derecha de la posición actual, el siguiente no es 0
-    getNextRow: function (r, c) {
+    getNextRow(r, c) {
         // Recorrer los elementos restantes en la fila fila de c + 1,
         for (var i = c + 1; i < this.data.length; i++) {
             // Si hay un valor distinto de 0, devuelve el número de columnas
@@ -136,11 +132,10 @@ var game = {
         }
         // salida de bucle devuelve -1
         return -1;
-    },
-
+    }
 
     // Mueve todas las líneas a la derecha	
-    moveRight: function () {
+    moveRight() {
         var before = String(this.data);
         for (var r = 0; r < this.data.length; r++) {
             this.moveRightRow(r);
@@ -153,9 +148,9 @@ var game = {
             }
             this.updateView();
         }
-    },
+    }
 
-    moveRightRow: function (r) {
+    moveRightRow(r) {
         for (var c = this.data.length - 1; c > 0; c--) {
             var prec = this.getPreRow(r, c)
             if (prec == -1) {
@@ -170,16 +165,16 @@ var game = {
                 this.data[r][prec] = 0;
             }
         }
-    },
+    }
 
-    getPreRow: function (r, c) {
+    getPreRow(r, c) {
         for (var i = c - 1; i >= 0; i--) {
             if (this.data[r][i] != 0) return i;
         }
         return -1;
-    },
+    }
 
-    moveUp: function () {
+    moveUp() {
         var before = String(this.data);
         for (var c = 0; c < this.data.length; c++) {
             this.moveUpCol(c);
@@ -192,10 +187,11 @@ var game = {
             }
             this.updateView();
         }
-    },
+    }
+
 
     // Mueve todas las columnas hacia arriba
-    moveUpCol: function (c) {
+    moveUpCol(c) {
         for (var r = 0; r < this.data.length - 1; r++) {
             var nextr = this.getNextCol(r, c)
             if (nextr == -1) {
@@ -210,17 +206,17 @@ var game = {
                 this.data[nextr][c] = 0;
             }
         }
-    },
+    }
 
-    getNextCol: function (r, c) {
+    getNextCol(r, c) {
         for (var i = r + 1; i < this.data.length; i++) {
             if (this.data[i][c] != 0) return i;
         }
         return -1;
-    },
+    }
 
     // Mover hacia abajo todas las columnas
-    moveDown: function () {
+    moveDown() {
         var before = String(this.data);
         for (var c = 0; c < this.data.length; c++) {
             this.moveDownCol(c);
@@ -233,9 +229,9 @@ var game = {
             }
             this.updateView();
         }
-    },
+    }
 
-    moveDownCol: function (c) {
+    moveDownCol(c) {
         for (var r = this.data.length - 1; r > 0; r--) {
             var prer = this.getPreCol(r, c)
             if (prer == -1) {
@@ -251,16 +247,16 @@ var game = {
                 this.data[prer][c] = 0;
             }
         }
-    },
+    }
 
-    getPreCol: function (r, c) {
+    getPreCol(r, c) {
         for (var i = r - 1; i >= 0; i--) {
             if (this.data[i][c] != 0) return i;
         }
         return -1;
-    },
+    }
 
-    isGameOver: function () {
+    isGameOver() {
         // Condiciones de finalización del juego:
         // 1. Todos los datos en la matriz no son 0;
         // 2. Los valores de posición adyacentes de cada fila de datos en la matriz no son iguales
@@ -286,8 +282,10 @@ var game = {
         return true;
     }
 }
+
 function startGame() {
     // Llama a la función para iniciar el juego
+    const game = new Game();
     game.start();
     document.onkeydown = function (event) {
         // Presione el botón izquierdo o la tecla de letra a para moverse hacia la izquierda
