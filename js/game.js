@@ -9,7 +9,6 @@ class Game {
         this.GAMEOVER = 0;
     }
 
-    // El juego comienza con el método start ()
     start() {
         // Establecer el estado del juego para comenzar
         this.state = this.RUNNING;
@@ -78,7 +77,6 @@ class Game {
     }
 
     moveLeft() {
-        // Determinar si la cuerda se mueve
         // Convierte la matriz en una cadena antes de hacer la operación de mover
         var before = String(this.data);
         // filas transversales
@@ -99,7 +97,6 @@ class Game {
         }
     }
 
-    // Juzga y mueve cada elemento en la línea especificada a la izquierda
     moveLeftRow(r) {
         // 0 inicio, recorre cada elemento en la fila r
         for (var c = 0; c < this.data.length - 1; c++) {
@@ -121,6 +118,7 @@ class Game {
             }
         }
     }
+
     // Encuentra el siguiente número a la derecha de la posición actual, el siguiente no es 0
     getNextRow(r, c) {
         // Recorrer los elementos restantes en la fila fila de c + 1,
@@ -130,11 +128,9 @@ class Game {
                 return i;
             }
         }
-        // salida de bucle devuelve -1
         return -1;
     }
 
-    // Mueve todas las líneas a la derecha	
     moveRight() {
         var before = String(this.data);
         for (var r = 0; r < this.data.length; r++) {
@@ -189,8 +185,6 @@ class Game {
         }
     }
 
-
-    // Mueve todas las columnas hacia arriba
     moveUpCol(c) {
         for (var r = 0; r < this.data.length - 1; r++) {
             var nextr = this.getNextCol(r, c)
@@ -215,7 +209,6 @@ class Game {
         return -1;
     }
 
-    // Mover hacia abajo todas las columnas
     moveDown() {
         var before = String(this.data);
         for (var c = 0; c < this.data.length; c++) {
@@ -263,7 +256,6 @@ class Game {
         // 3. Los valores de las posiciones adyacentes de cada columna de datos en la matriz no son iguales
         for (var c = 0; c < this.data.length; c++) {
             for (var r = 0; r < this.data.length; r++) {
-                // Juzgar todo no 0
                 if (this.data[r][c] == 0) {
                     return false;
                 }
@@ -284,27 +276,27 @@ class Game {
 }
 
 function startGame() {
-    // Llama a la función para iniciar el juego
     const game = new Game();
+    //Inicio juego 
     game.start();
     document.onkeydown = function (event) {
-        // Presione el botón izquierdo o la tecla de letra a para moverse hacia la izquierda
+        // flecha izquierda o a: moverse hacia izquierda
         if (event.keyCode == 37 || event.keyCode == 65) {
             game.moveLeft();
         }
-        // Presione la tecla arriba o la tecla de letra w para subir
+        // flecha arriba o w: moverse hacia arriba
         if (event.keyCode == 38 || event.keyCode == 87) {
             game.moveUp();
         }
-        // Presione la tecla derecha o la tecla de letra d para moverse hacia la derecha
+        // flecha derecha o d: moverse hacia la derecha
         if (event.keyCode == 39 || event.keyCode == 68) {
             game.moveRight();
         }
-        // Presione la tecla hacia abajo o la tecla s para moverse hacia abajo
+        // flecha abajo o s: moverse hacia abajo
         if (event.keyCode == 40 || event.keyCode == 83) {
             game.moveDown();
         }
-        // Presiona la barra espaciadora para reiniciar el juego
+        // Espacio: reiniciar el juego
         if (event.keyCode == 32) {
             game.start();
         }
