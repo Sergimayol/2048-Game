@@ -69,6 +69,7 @@ body {
     padding: 5px 0 0 5px;
     border-radius: 10px;
     background-color: #bbada0;
+    margin-top: 40px;
 }
 
 .cell {
@@ -173,4 +174,5 @@ body {
     background: #9f8d77;
     border-radius: 6px;
     text-decoration: none;
+    cursor: pointer;
 }
