@@ -46,6 +46,7 @@ body {
 .title {
     font: bold 40px arial;
     margin-left: 80px;
+    margin-top: 15px;
 }
 
 .puntuacion {
